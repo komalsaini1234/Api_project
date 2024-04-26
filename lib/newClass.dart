@@ -13,6 +13,7 @@ class NewClass extends StatelessWidget {
   final String rating;
   final String discountPercentage;
   final String category;
+
   const NewClass({
     super.key,
     required this.ImagePath,
@@ -29,50 +30,173 @@ class NewClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 103, 161, 209),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('New CLass'),
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: Colors.white),
+          onPressed: () {},
+        ),
+        title: const Text(
+          'New CLass',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(children: [
-              Text(
-                title,
-                style: TextStyle(color: Colors.white),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(children: [
+                  Text(
+                    title,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    child: Image.network(
+                      ImagePath,
+                      scale: 1,
+                    ),
+                  ),
+                  Text(
+                    brand,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  Divider(),
+                  Text(
+                    price,
+                    style: TextStyle(color: Colors.amber),
+                  ),
+                  Text(
+                    description,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        category,
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.favorite,
+                                size: 20,
+                              ),
+                              Text("Wishlist"),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.share,
+                                  color: Colors.blueAccent,
+                                  size: 20,
+                                ),
+                                Text(
+                                  "share",
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Text(
+                    stock,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  Container(
+                    height: 35,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.amber,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          rating,
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
               ),
-              Image.network(
-                ImagePath,
-                scale: 1,
+              Row(
+                children: [
+                  Icon(
+                    Icons.attach_money_sharp,
+                    color: Colors.greenAccent,
+                  ),
+                  Text(
+                    " 699 with 2 Special offers",
+                    style: TextStyle(
+                        color: Colors.greenAccent,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-              Text(
-                brand,
-                style: TextStyle(color: Colors.white),
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.shopping_cart,
+                            color: Colors.purple,
+                          ),
+                          Text(
+                            "Add to cart",
+                            style: TextStyle(color: Colors.purple),
+                          ),
+                        ],
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.arrow_circle_right,
+                              color: Colors.purple,
+                            ),
+                            Text(
+                              "Buy now",
+                              style: TextStyle(color: Colors.purple),
+                            )
+                          ],
+                        )),
+                  )
+                ],
               ),
-              Text(
-                price,
-                style: TextStyle(color: Colors.amber),
-              ),
-              Text(
-                description,
-                style: TextStyle(color: Colors.white),
-              ),
-              Text(
-                category,
-                style: TextStyle(color: Colors.white),
-              ),
-              Text(
-                stock,
-                style: TextStyle(color: Colors.white),
-              ),
-              Text(
-                rating,
-                style: TextStyle(color: Colors.white),
-              ),
-            ]),
-          )
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }
