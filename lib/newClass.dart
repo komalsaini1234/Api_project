@@ -161,38 +161,83 @@ class NewClass extends StatelessWidget {
               ),
               Row(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.shopping_cart,
-                            color: Colors.purple,
-                          ),
-                          Text(
-                            "Add to cart",
-                            style: TextStyle(color: Colors.purple),
-                          ),
-                        ],
-                      )),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.arrow_circle_right,
-                              color: Colors.purple,
-                            ),
-                            Text(
-                              "Buy now",
-                              style: TextStyle(color: Colors.purple),
-                            )
-                          ],
-                        )),
-                  )
+                    padding: const EdgeInsets.only(top: 30, left: 25),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          child: Icon(Icons.fire_truck),
+                          backgroundColor: Colors.amber,
+                        ),
+                        Text(
+                          "Free \n Dilvery",
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35, top: 30),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          child: Icon(Icons.replay_circle_filled),
+                          backgroundColor: Colors.amber,
+                        ),
+                        Text(
+                          "10 days \n Replacement",
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35, top: 30),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          child: Icon(Icons.tv),
+                          backgroundColor: Colors.amber,
+                        ),
+                        Text(
+                          "36 Months \n warranty",
+                        )
+                      ],
+                    ),
+                  ),
                 ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.shopping_cart,
+                          color: Colors.purple,
+                        ),
+                        Text(
+                          "Add to cart",
+                          style: TextStyle(color: Colors.purple),
+                        ),
+                      ],
+                    )),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.arrow_circle_right,
+                          color: Colors.purple,
+                        ),
+                        Text(
+                          "Buy now",
+                          style: TextStyle(color: Colors.purple),
+                        )
+                      ],
+                    )),
               ),
             ],
           ),
